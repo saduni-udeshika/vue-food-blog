@@ -30,6 +30,7 @@ export default {
   padding: 30px 30px
 .input
   width: 90%
+  padding: 8px
   margin: 10px
   border-radius: 4px
 .inputs
@@ -37,9 +38,11 @@ export default {
   color: black
   font-size: 1rem
 .submit
+  width: 200px
   padding: 0.75%
   margin: 20px
   border-radius: 4px
+  font-size: 1rem
   color: white
   background-color: black
   cursor: pointer
