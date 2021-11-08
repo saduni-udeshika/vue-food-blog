@@ -20,7 +20,7 @@
       <h1>Meet the Team</h1>
       <div class="spacer"></div>
       <div class="member">
-        <img src="https://th.bing.com/th?id=OIF.%2fyIh9hALNuwrhOe4F%2bsa5g&w=198&h=180&c=7&o=5&dpr=1.38&pid=1.7">
+        <img src="https://flourish-uk.com/media/1139/perm-chef-fb-twitter-new.jpg">
         <div class="member-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="member">
-        <img src="https://th.bing.com/th?id=OIF.%2fyIh9hALNuwrhOe4F%2bsa5g&w=198&h=180&c=7&o=5&dpr=1.38&pid=1.7">
+        <img src="https://flourish-uk.com/media/1139/perm-chef-fb-twitter-new.jpg">
         <div class="member-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="member">
-        <img src="https://th.bing.com/th?id=OIF.%2fyIh9hALNuwrhOe4F%2bsa5g&w=198&h=180&c=7&o=5&dpr=1.38&pid=1.7">
+        <img src="https://flourish-uk.com/media/1139/perm-chef-fb-twitter-new.jpg">
         <div class="member-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -82,4 +82,5 @@ export default {
 img
   width: 40%
   float: left
+  border-radius: 4px
 </style>
