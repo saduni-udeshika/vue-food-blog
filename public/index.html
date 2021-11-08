@@ -13,14 +13,22 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <Navbar/>
   </body>
 </html>
 <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 body{
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 </style>
+<script>
+  import Navbar from '../src/components/Navbar'
+  export default {
+    components: { Navbar }
+  }
+</script>

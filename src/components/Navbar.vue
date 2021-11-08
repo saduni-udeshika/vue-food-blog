@@ -10,7 +10,7 @@
     <router-link to="/recipes">
       <div class="nav-item"> ALL RECIPES</div>
     </router-link>
-    <router-link to="/recipes">
+    <router-link to="/feedback">
       <div class="nav-item">F & Q</div>
     </router-link>
     <div class="spacer"></div>

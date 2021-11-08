@@ -10,50 +10,80 @@
     <div class="flex-box">
       <div class="intro">
         <h1>What We do at LaCooK?</h1>
-        <p>We provide recipes and cooking ideas</p>
+        <div>We provide recipes and cooking ideas</div>
         <div class="container">
           <div class="card">
             <img class="features" src="../assets/shrimp.jpg">
             <h3>WEEKDAYS SPECIAL RECIPES</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.</p>
+            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            </div>
           </div>
           <div class="card" id="pasta">
             <img class="features" src="../assets/rotini-pasta.jpg">
             <h3>PASTA SALADS FOR EVERY OCCASION</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.</p>
+            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            </div>
           </div>
           <div class="card">
             <img class="features" src="../assets/cake.jpg">
             <h3>CAKE DECORATING & TIPS</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.</p>
+            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            </div>
           </div>
         </div>
       </div>
-      <hr>
-      <div class="spacer"></div>
       <div class="spacer"></div>
       <div class="intro">
-        <h1>Why choose LaCooK</h1>
-        <p>There are reasons, Why you should choose us.</p>
+        <h1>Why you should choose LaCooK</h1>
+        <div>There are reasons, Why you should choose us.</div>
       </div>
       <div class="mt-40"></div>
       <div class="container">
         <div class="card-2">
-          <h3></h3>
+          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <div class="mt-20"></div>
+          <div class="text-header">Tasty Food Recipes</div>
+          <div class="mt-20"></div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          </div>
         </div>
-        <div class="card-2">2</div>
-        <div class="card-2">3</div>
-        <div class="card-2">4</div>
+        <div class="card-2">
+          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <div class="mt-20"></div>
+          <div class="text-header">Tasty Food Recipes</div>
+          <div class="mt-20"></div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          </div>
+        </div>
+        <div class="card-2">
+          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <div class="mt-20"></div>
+          <div class="text-header">Tasty Food Recipes</div>
+          <div class="mt-20"></div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          </div>
+        </div>
+        <div class="card-2">
+          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <div class="mt-20"></div>
+          <div class="text-header">Tasty Food Recipes</div>
+          <div class="mt-20"></div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Home'
 }
@@ -95,18 +125,39 @@ a
   flex-direction: row
 
 .features
+  margin-top: 20px
   width: 200px
   height: 200px
   border-radius: 50%
 
 .card
-  height: 450px
+  height: 480px
   border: 2px
   border: solid
   border-color: #c9a3ef
-  padding: 2px
+  border-radius: 4px
+  padding: 30px 30px
   margin: 1%
 
 #pasta
-  background-color: #dedddd
+  background-color: #eeeded
+
+.card-2
+  background-color: blueviolet
+  margin: 2%
+  padding: 4%
+  border-radius: 4px
+
+.text
+  color: white
+  line-height: 2rem
+
+.text-header
+  color: white
+  font-weight: bold
+  font-size: 1.5rem
+
+.icon-image
+  width: 50px
+  height: 50px
 </style>
