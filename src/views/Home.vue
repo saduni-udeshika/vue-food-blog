@@ -2,7 +2,8 @@
   <div class="main">
     <div class="home">
       <div class="flex-container">
-        <div class="home-text">LEARN HOW TO COOK TASTY MEALS
+        <div class="home-text">
+          LEARN HOW TO COOK TASTY MEALS
           <p>The Simply Recipes</p>
         </div>
       </div>
@@ -13,24 +14,30 @@
         <div>We provide recipes and cooking ideas</div>
         <div class="container">
           <div class="card">
-            <img class="features" src="../assets/shrimp.jpg">
+            <img class="features" src="../assets/shrimp.jpg" />
             <h3>WEEKDAYS SPECIAL RECIPES</h3>
-            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            <div class="text-features">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit
+              ut aliquam purus sit amet luctus venenatis lectus.
             </div>
           </div>
           <div class="card" id="pasta">
-            <img class="features" src="../assets/rotini-pasta.jpg">
+            <img class="features" src="../assets/rotini-pasta.jpg" />
             <h3>PASTA SALADS FOR EVERY OCCASION</h3>
-            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            <div class="text-features">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit
+              ut aliquam purus sit amet luctus venenatis lectus.
             </div>
           </div>
           <div class="card">
-            <img class="features" src="../assets/cake.jpg">
+            <img class="features" src="../assets/cake.jpg" />
             <h3>CAKE DECORATING & TIPS</h3>
-            <div class="text-features">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+            <div class="text-features">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit
+              ut aliquam purus sit amet luctus venenatis lectus.
             </div>
           </div>
         </div>
@@ -43,39 +50,47 @@
       <div class="mt-40"></div>
       <div class="container">
         <div class="card-2">
-          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <img class="icon-image" src="../assets/icons8-food-30.png" />
           <div class="mt-20"></div>
           <div class="text-header">Tasty Food Recipes</div>
           <div class="mt-20"></div>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut
+            aliquam purus sit amet luctus venenatis lectus.
           </div>
         </div>
         <div class="card-2">
-          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <img class="icon-image" src="../assets/icons8-food-30.png" />
           <div class="mt-20"></div>
           <div class="text-header">Tasty Food Recipes</div>
           <div class="mt-20"></div>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut
+            aliquam purus sit amet luctus venenatis lectus.
           </div>
         </div>
         <div class="card-2">
-          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <img class="icon-image" src="../assets/icons8-food-30.png" />
           <div class="mt-20"></div>
           <div class="text-header">Tasty Food Recipes</div>
           <div class="mt-20"></div>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut
+            aliquam purus sit amet luctus venenatis lectus.
           </div>
         </div>
         <div class="card-2">
-          <img class="icon-image" src="../assets/icons8-food-30.png">
+          <img class="icon-image" src="../assets/icons8-food-30.png" />
           <div class="mt-20"></div>
           <div class="text-header">Tasty Food Recipes</div>
           <div class="mt-20"></div>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus.
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut
+            aliquam purus sit amet luctus venenatis lectus.
           </div>
         </div>
       </div>
@@ -85,7 +100,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: "Home",
 }
 </script>
 <style lang="sass" scoped>
@@ -143,7 +158,7 @@ a
   background-color: #eeeded
 
 .card-2
-  background-color: blueviolet
+  background-color: #a59a8e
   margin: 2%
   padding: 4%
   border-radius: 4px
