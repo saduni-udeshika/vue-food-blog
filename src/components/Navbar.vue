@@ -10,12 +10,15 @@
     <router-link to="/recipes">
       <div class="nav-item">ALL RECIPES</div>
     </router-link>
+    <router-link v-if="$store.state.user" to="/compose">
+      <div class="nav-item">COMPOSE</div>
+    </router-link>
     <router-link to="/feedback">
       <div class="nav-item">F & Q</div>
     </router-link>
     <div class="spacer"></div>
     <div class="user-icon" v-if="user">
-      <div class="nav-item user-icon-content" @click="logout">⬆</div>
+      <div class="nav-item user-icon-content" @click="logout">⤴️</div>
     </div>
     <router-link v-else to="/login" class="user-icon">
       <div class="nav-item user-icon-content">👤</div>
