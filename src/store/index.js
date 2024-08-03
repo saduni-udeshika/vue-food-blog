@@ -1,15 +1,45 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue"
+import Vuex from "vuex"
+import { auth } from "../firebase/config"
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    user: null,
   },
   mutations: {
+    setUser(state, payload) {
+      state.user = payload
+      console.log("user state changed", state.user)
+    },
   },
   actions: {
+    async signup(context, { email, password }) {
+      const res = await createUserWithEmailAndPassword(auth, email, password)
+      if (res) {
+        context.commit("setUser", res.user)
+      } else {
+        throw new Error("signup failed.")
+      }
+    },
+    async login(context, { email, password }) {
+      const res = await signInWithEmailAndPassword(auth, email, password)
+      if (res) {
+        context.commit("setUser", res.user)
+      } else {
+        throw new Error("login failed.")
+      }
+    },
+    async logout(context) {
+      await signOut(auth)
+      context.commit("setUser", null)
+    },
   },
-  modules: {
-  }
+  modules: {},
 })

@@ -16,10 +16,16 @@
       </div>
       <button type="submit">Signup</button>
     </form>
+    <p class="login-message">
+      Already have an account?
+      <router-link to="/login">Login here</router-link>.
+    </p>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex"
+
 export default {
   data() {
     return {
@@ -29,9 +35,23 @@ export default {
     }
   },
   methods: {
-    signup() {
-      // Add your signup logic here
-      console.log("Signup:", this.email, this.password, this.confirmPassword)
+    ...mapActions(["signup"]),
+    async signup() {
+      if (this.password !== this.confirmPassword) {
+        alert("Passwords do not match.")
+        return
+      }
+
+      try {
+        await this.$store.dispatch("signup", {
+          email: this.email,
+          password: this.password,
+        })
+        this.$router.push("/compose")
+        console.log("Signup successful")
+      } catch (error) {
+        console.error("Signup error:", error.message)
+      }
     },
   },
 }
@@ -68,5 +88,16 @@ button {
 }
 button:hover {
   background-color: #38a169;
+}
+.login-message {
+  margin-top: 20px;
+  text-align: center;
+}
+.login-message a {
+  color: #42b983;
+  text-decoration: none;
+}
+.login-message a:hover {
+  text-decoration: underline;
 }
 </style>

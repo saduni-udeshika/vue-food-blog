@@ -8,25 +8,27 @@
       <div class="nav-item">ABOUT</div>
     </router-link>
     <router-link to="/recipes">
-      <div class="nav-item"> ALL RECIPES</div>
+      <div class="nav-item">ALL RECIPES</div>
     </router-link>
     <router-link to="/feedback">
       <div class="nav-item">F & Q</div>
     </router-link>
     <div class="spacer"></div>
-    <form class="search-form" action="#">
-      <input class="placeholder" type="text" placeholder="Search.." name="search">
-    </form>
+    <router-link to="/login" class="user-icon">
+      <div class="nav-item user-icon-content">👤</div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
+  name: "Navbar",
 }
 </script>
+
 <style lang="sass" scoped>
 @import "./src/assets/style.sass"
+
 .nav-container
   padding: 14px 0
   display: flex
@@ -52,13 +54,6 @@ a
 .nav-item:hover
   color: #ff0000
 
-.search-placeholder
-  width: 20rem
-  border-radius: 4px
-
-.search-form
-  flex: auto
-
 input
   padding: 1%
   border-style: solid
@@ -66,6 +61,22 @@ input
 
 .placeholder
   outline: none
+
+.user-icon
+  margin-left: auto
+  margin-right: 15px
+  display: flex
+  align-items: center
+
+.user-icon-content
+  cursor: pointer
+  font-size: 24px
+  color: #090909
+  text-decoration: none
+
+.user-icon-content:hover
+  color: #ff0000
+
 /*@media screen and (max-width: 850px)
   .search-bar
     flex: none
