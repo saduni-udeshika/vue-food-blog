@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
+import store from "../store"
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,7 @@ const routes = [
     path: "/compose",
     name: "Compose",
     component: () => import("../views/Compose.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/login",
@@ -46,6 +48,22 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    // This route requires auth
+    if (!store.state.user) {
+      // redirect to login page
+      next({ path: "/login" })
+    } else {
+      // Proceed to route
+      next()
+    }
+  } else {
+    // Proceed to route
+    next()
+  }
 })
 
 export default router

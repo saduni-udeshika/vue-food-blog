@@ -14,15 +14,28 @@
       <div class="nav-item">F & Q</div>
     </router-link>
     <div class="spacer"></div>
-    <router-link to="/login" class="user-icon">
+    <div class="user-icon" v-if="user">
+      <div class="nav-item user-icon-content" @click="logout">⬆</div>
+    </div>
+    <router-link v-else to="/login" class="user-icon">
       <div class="nav-item user-icon-content">👤</div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex"
+
 export default {
   name: "Navbar",
+  computed: {
+    ...mapState({
+      user: (state) => state.user,
+    }),
+  },
+  methods: {
+    ...mapActions(["logout"]),
+  },
 }
 </script>
 
