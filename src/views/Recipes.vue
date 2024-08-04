@@ -1,36 +1,40 @@
 <template>
   <div class="recipes">
-    <div>
-      <RecipeCard :recipeName="recipeName[0]" :description="description[0]" :img ="img[0]" />
-      <RecipeCard :recipeName="recipeName[1]" :description="description[1]" :img ="img[1]" />
-      <RecipeCard :recipeName="recipeName[1]" :description="description[1]" :img ="img[1]" />
-      <RecipeCard :recipeName="recipeName[1]" :description="description[1]" :img ="img[1]" />
-      <RecipeCard :recipeName="recipeName[1]" :description="description[1]" :img ="img[1]" />
+    <div v-if="recipes.length > 0">
+      <RecipeCard
+        v-for="(recipe, index) in recipes"
+        :key="index"
+        :recipeName="recipe.heading"
+        :description="recipe.text"
+        :img="recipe.imageUrl"
+      />
     </div>
+    <div v-else>Loading...</div>
   </div>
 </template>
+
 <script>
-import RecipeCard from '../components/RecipeCard'
+import { getFirestore, collection, getDocs } from "firebase/firestore"
+import RecipeCard from "../components/RecipeCard"
 
 export default {
-  name: 'Recipes',
-
+  name: "Recipes",
   components: {
-
-    RecipeCard
+    RecipeCard,
   },
-
-  data () {
+  data() {
     return {
-      recipeName: ['Recipes1', 'Recipes2'],
-      description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n' +
-      '          labore et dolore magna aliqua.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n' +
-      '          labore et dolore magna aliqua.'],
-      img: ['/img/cake.f01ea640.jpg', '/img/cake.f01ea640.jpg']
+      recipes: [],
     }
-  }
+  },
+  async mounted() {
+    const db = getFirestore()
+    const querySnapshot = await getDocs(collection(db, "recipies"))
+    querySnapshot.forEach((doc) => {
+      this.recipes.push(doc.data())
+    })
+  },
 }
 </script>
-<style lang="sass" scoped>
 
-</style>
+<style lang="sass" scoped></style>

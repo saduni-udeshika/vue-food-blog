@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore"
 import { getStorage } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB-SCnZ4jGCFGzJO5b1rBIX28shLZFZXaU",
-  authDomain: "vue-food-blong.firebaseapp.com",
-  projectId: "vue-food-blong",
-  storageBucket: "vue-food-blong.appspot.com",
-  messagingSenderId: "765311584227",
-  appId: "1:765311584227:web:34d7535f58d52cfbbd42d6",
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)

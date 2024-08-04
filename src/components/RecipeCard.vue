@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img src="../assets/cake.jpg">
+    <img :src="img" alt="Recipe Image" />
     <div class="heading">
       {{ recipeName }}
     </div>
@@ -12,9 +12,8 @@
 
 <script>
 export default {
-  name: 'RecipeCard',
-  props: ['recipeName', 'description', 'img']
-
+  name: "RecipeCard",
+  props: ["recipeName", "description", "img"],
 }
 </script>
 
