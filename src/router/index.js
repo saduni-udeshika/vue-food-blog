@@ -34,18 +34,18 @@ const routes = [
   },
   {
     path: "/feedback-list",
-    name: "Compose",
+    name: "FeedbackList",
     component: () => import("../views/FeedbackList.vue"),
     meta: { requiresAuth: true },
   },
   {
     path: "/login",
-    name: "Compose",
+    name: "Login",
     component: () => import("../views/Login.vue"),
   },
   {
     path: "/signup",
-    name: "Compose",
+    name: "Signup",
     component: () => import("../views/Signup.vue"),
   },
 ]
@@ -57,19 +57,31 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if (!store.state.authIsReady) {
+    const unwatch = store.watch(
+      (state) => state.authIsReady,
+      (authIsReady) => {
+        if (authIsReady) {
+          unwatch()
+          proceed(to, next)
+        }
+      }
+    )
+  } else {
+    proceed(to, next)
+  }
+})
+
+function proceed(to, next) {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    // This route requires auth
     if (!store.state.user) {
-      // redirect to login page
       next({ path: "/login" })
     } else {
-      // Proceed to route
       next()
     }
   } else {
-    // Proceed to route
     next()
   }
-})
+}
 
 export default router

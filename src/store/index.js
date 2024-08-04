@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth"
 
 Vue.use(Vuex)
@@ -12,11 +13,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: null,
+    authIsReady: false,
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload
       console.log("user state changed", state.user)
+    },
+    setAuthIsReady(state, payload) {
+      state.authIsReady = payload
     },
   },
   actions: {
@@ -39,6 +44,12 @@ export default new Vuex.Store({
     async logout(context) {
       await signOut(auth)
       context.commit("setUser", null)
+    },
+    checkAuthState(context) {
+      onAuthStateChanged(auth, (user) => {
+        context.commit("setUser", user || null)
+        context.commit("setAuthIsReady", true)
+      })
     },
   },
   modules: {},
