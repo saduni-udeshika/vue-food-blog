@@ -33,6 +33,12 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: "/feedback-list",
+    name: "Compose",
+    component: () => import("../views/FeedbackList.vue"),
+    meta: { requiresAuth: true },
+  },
+  {
     path: "/login",
     name: "Compose",
     component: () => import("../views/Login.vue"),

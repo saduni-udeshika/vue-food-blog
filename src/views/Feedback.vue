@@ -1,20 +1,72 @@
 <template>
   <div class="feedback">
-    <form class="feedbackForm">
-      <lable class="inputs">Name: </lable><br>
-      <input class="input" type="text" placeholder="Enter your name"><br>
-      <lable class="inputs">Email: </lable><br>
-      <input class="input" type="email" placeholder="Enter your email address"><br>
-      <lable class="inputs">Type your Feedback or Questions: </lable><br>
-      <textarea class="input" type="text" placeholder="Give feedbacks or ask questions"></textarea><br>
-      <button class="submit">SUBMIT</button>
+    <form class="feedbackForm" @submit.prevent="submitFeedback">
+      <label class="inputs">Name: </label><br />
+      <input
+        class="input"
+        type="text"
+        v-model="name"
+        placeholder="Enter your name"
+        required
+      /><br />
+      <label class="inputs">Email: </label><br />
+      <input
+        class="input"
+        type="email"
+        v-model="email"
+        placeholder="Enter your email address"
+        required
+      /><br />
+      <label class="inputs">Type your Feedback or Questions: </label><br />
+      <textarea
+        class="input"
+        v-model="message"
+        placeholder="Give feedback or ask questions"
+        required
+      ></textarea
+      ><br />
+      <button class="submit" type="submit">SUBMIT</button>
     </form>
   </div>
 </template>
 
 <script>
+import { getFirestore, collection, addDoc } from "firebase/firestore"
+
 export default {
-  name: 'Feedback'
+  name: "Feedback",
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: "",
+    }
+  },
+  methods: {
+    async submitFeedback() {
+      if (this.name && this.email && this.message) {
+        try {
+          const db = getFirestore()
+          await addDoc(collection(db, "feedbacks"), {
+            name: this.name,
+            email: this.email,
+            message: this.message,
+            createdAt: new Date(),
+          })
+
+          alert("Feedback submitted successfully!")
+          this.name = ""
+          this.email = ""
+          this.message = ""
+        } catch (error) {
+          console.error("Error submitting feedback:", error)
+          alert("Error submitting feedback. Please try again.")
+        }
+      } else {
+        alert("Please fill in all fields.")
+      }
+    },
+  },
 }
 </script>
 
@@ -23,11 +75,9 @@ export default {
   height: 76vh
 .feedbackForm
   margin: 4% 20%
-  border: 2px
-  border: solid
-  border-color: #c9a3ef
+  border: 2px solid #c9a3ef
   border-radius: 4px
-  padding: 30px 30px
+  padding: 30px
 .input
   width: 90%
   padding: 8px

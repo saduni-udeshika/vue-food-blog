@@ -13,6 +13,9 @@
     <router-link v-if="$store.state.user" to="/compose">
       <div class="nav-item">COMPOSE</div>
     </router-link>
+    <router-link v-if="$store.state.user" to="/feedback-list">
+      <div class="nav-item">FEEDBACK</div>
+    </router-link>
     <router-link to="/feedback">
       <div class="nav-item">F & Q</div>
     </router-link>

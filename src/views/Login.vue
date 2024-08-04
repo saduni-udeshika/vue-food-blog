@@ -12,11 +12,11 @@
       </div>
       <button type="submit">Login</button>
     </form>
-    <div class="signup-link">
+    <!-- <div class="signup-link">
       <p>
         Don't have an account? <router-link to="/signup">Sign up</router-link>
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -80,7 +80,7 @@ button {
 button:hover {
   background-color: #38a169;
 }
-.signup-link {
+/* .signup-link {
   margin-top: 15px;
   text-align: center;
 }
@@ -93,5 +93,5 @@ button:hover {
 }
 .signup-link a:hover {
   text-decoration: underline;
-}
+} */
 </style>
