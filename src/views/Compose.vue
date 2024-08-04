@@ -1,19 +1,17 @@
 <template>
   <div class="compose">
-    <h1>Compose</h1>
     <form @submit.prevent="submitPost">
-      <p>Upload Image Here</p>
-      <input type="file" @change="onFileChange" /><br />
-      <div id="image-box" v-if="imagePreview">
-        <img :src="imagePreview" alt="Image Preview" />
+      <div class="container">
+        <p>Upload Image Here...</p>
+        <input type="file" @change="onFileChange" /><br />
+        <div id="image-box" v-if="imagePreview">
+          <img :src="imagePreview" alt="Image Preview" />
+        </div>
       </div>
-      <input
-        type="text"
-        v-model="recipeHeading"
-        placeholder="Heading"
-        required
-      /><br />
-      <textarea v-model="recipe" placeholder="Recipe" required></textarea><br />
+      <label class="inputs">Recipe Tittle: </label><br />
+      <input type="text" v-model="recipeHeading" required /><br />
+      <label class="inputs">Recipe: </label><br />
+      <textarea v-model="recipe" required></textarea><br />
       <button type="submit">PUBLISH</button>
     </form>
   </div>
@@ -82,13 +80,18 @@ export default {
 <style lang="sass" scoped>
 .compose
   max-width: 600px
-  margin: 0 auto
+  margin: 10% auto
   padding: 2% 10%
   text-align: left
-  background-color: #f9f9f9
   border: 1px solid #ddd
   border-radius: 5px
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+.container
+  border: 1px solid #ddd
+  border-radius: 5px
+  padding: 20px
+  margin-bottom: 25px
 
 form
   display: flex
@@ -96,14 +99,15 @@ form
 
 input[type="text"], textarea
   width: 100%
-  padding: 10px
+  padding: 10px 0px 10px 1px
   margin-bottom: 10px
   border: 1px solid #ddd
   border-radius: 5px
+  align-items: center
 
 button
-  padding: 10px 15px
-  background-color: #42b983
+  padding: 10px 8px
+  background-color: black
   color: white
   border: none
   border-radius: 5px

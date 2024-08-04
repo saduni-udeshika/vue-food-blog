@@ -1,14 +1,17 @@
 <template>
   <div v-if="isLoggedIn" class="feedbackList">
-    <h1>Feedback</h1>
     <ul>
-      <li v-for="feedback in feedbacks" :key="feedback.id">
+      <li
+        v-for="feedback in feedbacks"
+        :key="feedback.id"
+        class="feedback-card"
+      >
         <strong>{{ feedback.name }}</strong
         >: {{ feedback.message }}
       </li>
     </ul>
   </div>
-  <div v-else>
+  <div v-else class="login-prompt">
     <p>Please log in to view feedback.</p>
   </div>
 </template>
@@ -18,7 +21,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { getFirestore, collection, getDocs } from "firebase/firestore"
 
 export default {
-  name: "feedbackList",
+  name: "FeedbackList",
   data() {
     return {
       feedbacks: [],
@@ -52,9 +55,32 @@ export default {
 
 <style scoped>
 .feedbackList {
-  margin: 4% 20%;
+  margin: 2% 2%;
   padding: 30px;
-  border: 2px solid #c9a3ef;
   border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px; /* Add padding to separate bullets from text */
+}
+
+.feedback-card {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
+}
+
+.feedback-card:last-child {
+  margin-bottom: 0;
+}
+
+.login-prompt {
+  text-align: center;
+  margin: 20px;
 }
 </style>

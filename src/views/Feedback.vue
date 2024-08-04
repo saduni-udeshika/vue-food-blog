@@ -1,7 +1,7 @@
 <template>
   <div class="feedback">
-    <form class="feedbackForm" @submit.prevent="submitFeedback">
-      <label class="inputs">Name: </label><br />
+    <form class="form" @submit.prevent="submitFeedback">
+      <label class="label">Name: </label>
       <input
         class="input"
         type="text"
@@ -9,7 +9,7 @@
         placeholder="Enter your name"
         required
       /><br />
-      <label class="inputs">Email: </label><br />
+      <label class="label">Email: </label>
       <input
         class="input"
         type="email"
@@ -17,7 +17,7 @@
         placeholder="Enter your email address"
         required
       /><br />
-      <label class="inputs">Type your Feedback or Questions: </label><br />
+      <label class="label">Message: </label>
       <textarea
         class="input"
         v-model="message"
@@ -25,7 +25,7 @@
         required
       ></textarea
       ><br />
-      <button class="submit" type="submit">SUBMIT</button>
+      <button class="button" type="submit">SUBMIT</button>
     </form>
   </div>
 </template>
@@ -72,28 +72,44 @@ export default {
 
 <style lang="sass" scoped>
 .feedback
+  display: flex
+  justify-content: center
+  align-items: center
   height: 76vh
-.feedbackForm
-  margin: 4% 20%
-  border: 2px solid #c9a3ef
+  background-color: #f9f9f9
+
+.form
+  max-width: 600px
+  width: 100%
+  padding: 2% 5%
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
   border-radius: 4px
-  padding: 30px
+  background-color: #fff
+
 .input
-  width: 90%
+  width: 100%
   padding: 8px
-  margin: 10px
+  margin: 10px 0
   border-radius: 4px
-.inputs
-  float: left
+  border: 1px solid #ddd
+
+.label
+  display: block
   color: black
   font-size: 1rem
-.submit
-  width: 200px
-  padding: 0.75%
-  margin: 20px
+  text-align: left
+
+.button
+  width: 100%
+  padding: 10px
   border-radius: 4px
   font-size: 1rem
   color: white
   background-color: black
+  border: none
   cursor: pointer
+  margin-top: 10px
+
+.button:hover
+  background-color: #38a169
 </style>

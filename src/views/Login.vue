@@ -1,22 +1,29 @@
 <template>
-  <div class="form-container">
-    <h2>Login</h2>
-    <form @submit.prevent="login">
+  <div class="feedback">
+    <form class="form" @submit.prevent="login">
+      <h2>Login</h2>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" v-model="email" required />
+        <label class="label">Email</label>
+        <input
+          class="input"
+          type="email"
+          v-model="email"
+          placeholder="Enter your email"
+          required
+        />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" v-model="password" required />
+        <label class="label">Password</label>
+        <input
+          class="input"
+          type="password"
+          v-model="password"
+          placeholder="Enter your password"
+          required
+        />
       </div>
-      <button type="submit">Login</button>
+      <button class="button" type="submit">Login</button>
     </form>
-    <!-- <div class="signup-link">
-      <p>
-        Don't have an account? <router-link to="/signup">Sign up</router-link>
-      </p>
-    </div> -->
   </div>
 </template>
 
@@ -48,50 +55,49 @@ export default {
 }
 </script>
 
-<style scoped>
-.form-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.form-group {
-  margin-bottom: 15px;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-}
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #42b983;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #38a169;
-}
-/* .signup-link {
-  margin-top: 15px;
-  text-align: center;
-}
-.signup-link p {
-  margin: 0;
-}
-.signup-link a {
-  color: #42b983;
-  text-decoration: none;
-}
-.signup-link a:hover {
-  text-decoration: underline;
-} */
+<style lang="sass" scoped>
+.feedback
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 76vh
+  background-color: #f9f9f9
+
+.form
+  max-width: 600px
+  width: 100%
+  padding: 2% 5%
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+  border-radius: 4px
+  background-color: #fff
+
+.form-group
+  margin-bottom: 15px
+
+.label
+  display: block
+  color: black
+  font-size: 1rem
+  text-align: left
+
+.input
+  width: 100%
+  padding: 8px
+  margin: 10px 0
+  border-radius: 4px
+  border: 1px solid #ddd
+
+.button
+  width: 100%
+  padding: 10px
+  border-radius: 4px
+  font-size: 1rem
+  color: white
+  background-color: black
+  border: none
+  cursor: pointer
+  margin-top: 10px
+
+.button:hover
+  background-color: #38a169
 </style>
