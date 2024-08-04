@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Live Preview
+https://vue-food-blong.web.app/
+Some sample data to test the app,
+Username: 
+Password: 
